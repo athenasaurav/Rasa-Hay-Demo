@@ -1,0 +1,51 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - name_kb
+  - knowledge_base
+
+entities:
+  - name_kb
+
+slots:
+  name_kb:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+
+
+responses:
+  utter_greet:
+  - text: "Hi"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_ask_anything:
+  - text: "Good Choice. Please enter the name of NLU Engine you trained."
+
+  utter_prompt_kb:
+  - text: "To connect to LilChirp NLU Engine Just say Knowledge Base"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a Human-bot, powered by LilChirp NLU Engine 😄."
+
+actions:
+- action_greet
+- action_goodbye
+- action_iamabot
+- action_ask_anything
+- action_name_kb
+- action_kb
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

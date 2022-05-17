@@ -1,0 +1,59 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+
+- intent: knowledge_base
+  examples: |
+    - Knowledge Base
+    - connect to Knowledge Base
+    - connect to kb
+    - i want to add kb to bot
+    - i want to add Knowledge Base 
+    - lets connect bot to Knowledge Base
+
+- intent: name_kb
+  examples: |
+    - [game-of-thrones]{"entity":"name_kb","value":"game-of-thrones"}
+    - [kumar-kb]{"entity":"name_kb","value":"kumar-kb"}
+    - [anshul-kb]{"entity":"name_kb","value":"anshul-kb"}
+    - [my-kb]{"entity":"name_kb","value":"my-kb"}
+    - [rachel]{"entity":"name_kb","value":"rachel"}
+    - [meditations]{"entity":"name_kb","value":"meditations"}
+    - [customer-care]{"entity":"name_kb","value":"customer-care"}
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

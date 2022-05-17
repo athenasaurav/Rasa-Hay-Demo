@@ -1,0 +1,17 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: action_greet
+  - intent: knowledge_base
+  - action: action_ask_anything
+  - intent: name_kb
+    entities:
+    - name_kb: "game-of-thrones"
+  - slot_was_set:
+    - name_kb: "game-of-thrones"
+  - action: action_name_kb
+
