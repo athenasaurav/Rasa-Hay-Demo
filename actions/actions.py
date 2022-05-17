@@ -80,7 +80,7 @@ class ActionAskAny(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         buttons = []
-        buttons.append({"title": "game-of-thrones", "payload": "game-of-thrones"})
+#         buttons.append({"title": "game-of-thrones", "payload": "game-of-thrones"})
         buttons.append({"title": "meditations", "payload": "meditations"})
         buttons.append({"title": "customer care", "payload": "customer-care"})
         dispatcher.utter_message(text="Good Choice. Please choose the name of NLU Engine you want to talk to.", buttons=buttons)
