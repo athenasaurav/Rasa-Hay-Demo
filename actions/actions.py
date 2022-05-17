@@ -13,7 +13,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import requests
 
-SERVER_URL = 'http://172.105.38.177'
+SERVER_URL = 'http://172.105.36.179'
 
 class ActionGreet(Action):
 
@@ -124,6 +124,7 @@ class ActionKB(Action):
         name_kb = tracker.get_slot("name_kb").lower()
         if name_kb == "meditations":
             url = "{}:8001/get_query".format(SERVER_URL)
+            url = "http://"
             payload={'q': '{}'.format(msg)}
             files=[
 
@@ -149,7 +150,7 @@ class ActionKB(Action):
             print(response)
             dispatcher.utter_message(text="Here is your answer 😄.")
             dispatcher.utter_message(text=response['answers'][0]['answer'])
-            dispatcher.utter_message(text="The Context of Answer is :")
+            dispatcher.utter_message(text="The Context of Answer is in following document:")
             dispatcher.utter_message(text=response['answers'][0]['context'])
             dispatcher.utter_message(text="The score of Answer is : {}".format(response['answers'][0]['score']))
         elif name_kb == "game-of-thrones":
@@ -164,7 +165,7 @@ class ActionKB(Action):
             print(response)
             dispatcher.utter_message(text="Here is your answer 😄.")
             dispatcher.utter_message(text=response['answers'][0]['answer'])
-            dispatcher.utter_message(text="The Context of Answer is :")
+            dispatcher.utter_message(text="The Context of Answer is in following document:")
             dispatcher.utter_message(text=response['answers'][0]['context'])
             dispatcher.utter_message(text="The score of Answer is : {}".format(response['answers'][0]['score']))
             # dispatcher.utter_message(text=response['context_1'])
